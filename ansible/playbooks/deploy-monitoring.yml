@@ -1,0 +1,9 @@
+---
+- name: Deploy monitoring stack
+  hosts: app_servers
+  become: true
+
+  tasks:
+    - name: Monitoring deployment placeholder
+      ansible.builtin.debug:
+        msg: "Prometheus, Grafana, Loki, and Alertmanager deployment will be added in the monitoring automation phase."
