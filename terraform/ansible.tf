@@ -5,6 +5,6 @@ resource "null_resource" "run_ansible" {
   ]
 
   provisioner "local-exec" {
-    command = "sleep 60 && cd ${path.module}/.. && ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory.ini ansible/site.yaml"
+    command = "sleep 60 && cd ${path.module}/.. && ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory.ini ansible/playbooks/site.yml"
   }
 }

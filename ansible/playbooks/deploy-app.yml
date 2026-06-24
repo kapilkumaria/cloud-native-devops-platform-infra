@@ -15,8 +15,10 @@
     postgres_password: "changethis123"
 
     backend_cors_origins: "http://{{ ansible_host }}:3000,http://localhost:3000"
-    first_superuser: "challenge@devopsdojo.com"
-    first_superuser_password: "changethis123"
+    first_superuser: "chanllenge@devopsdojo.com"
+    first_superuser_password: "devopsdojo57"
+
+    project_name: "Full Stack FastAPI Project"
 
   tasks:
     - name: Install git
