@@ -1,0 +1,151 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Infrastructure Architecture">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="Cloud-Native DevOps Platform - Infrastructure Architecture" style="text;html=1;strokeColor=none;fillColor=none;fontSize=32;fontStyle=1;fontColor=#0f172a;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="25" width="1080" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="subtitle" value="Terraform + Ansible + Docker Compose on AWS" style="text;html=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=2;fontColor=#2563eb;align=center;" vertex="1" parent="1">
+          <mxGeometry x="560" y="75" width="680" height="35" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="developer" value="💻  &lt;b&gt;Developer&lt;/b&gt;&lt;br&gt;Push Code" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#94a3b8;fontSize=16;shadow=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="45" width="250" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="github" value="🐙  &lt;b&gt;GitHub Repositories&lt;/b&gt;&lt;br&gt;&lt;br&gt;• cloud-native-devops-platform-app&lt;br&gt;• cloud-native-devops-platform-infra&lt;br&gt;• cloud-native-devops-platform-manifests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#94a3b8;fontSize=15;shadow=1;align=left;spacingLeft=18;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="270" height="210" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="terraform" value="🟣  &lt;b&gt;Terraform&lt;/b&gt;&lt;br&gt;Provision Infrastructure&lt;br&gt;&lt;br&gt;✅ VPC&lt;br&gt;✅ Public Subnet&lt;br&gt;✅ Internet Gateway&lt;br&gt;✅ Route Table&lt;br&gt;✅ Security Group&lt;br&gt;✅ EC2 Instance&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#6d28d9&quot;&gt;&lt;b&gt;terraform apply&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5ff;strokeColor=#7c3aed;fontSize=15;shadow=1;align=left;spacingLeft=18;" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="270" height="280" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ansible" value="🔵  &lt;b&gt;Ansible&lt;/b&gt;&lt;br&gt;Configure &amp; Deploy&lt;br&gt;&lt;br&gt;✅ Install Docker&lt;br&gt;✅ Clone Application&lt;br&gt;✅ Configure Environment&lt;br&gt;✅ Deploy with Docker Compose&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;ansible-playbook&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;fontSize=15;shadow=1;align=left;spacingLeft=18;" vertex="1" parent="1">
+          <mxGeometry x="40" y="740" width="270" height="250" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="browser" value="🌐  &lt;b&gt;User / Browser&lt;/b&gt;&lt;br&gt;HTTP Access" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#94a3b8;fontSize=17;shadow=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="760" y="120" width="360" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="aws" value="🟧  &lt;b&gt;AWS Cloud&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 6;fillColor=#fff7ed;strokeColor=#f97316;fontSize=18;fontStyle=1;fontColor=#9a3412;align=left;verticalAlign=top;spacingLeft=25;spacingTop=22;" vertex="1" parent="1">
+          <mxGeometry x="370" y="270" width="1080" height="700" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="vpc" value="☁️  &lt;b&gt;VPC&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=6 5;fillColor=#f0fdf4;strokeColor=#22c55e;fontSize=17;fontStyle=1;fontColor=#166534;align=left;verticalAlign=top;spacingLeft=25;spacingTop=20;" vertex="1" parent="1">
+          <mxGeometry x="410" y="340" width="1000" height="590" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="subnet" value="🔒  &lt;b&gt;Public Subnet&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f7fee7;strokeColor=#84cc16;fontSize=16;fontStyle=1;fontColor=#365314;align=left;verticalAlign=top;spacingLeft=20;spacingTop=15;" vertex="1" parent="1">
+          <mxGeometry x="450" y="400" width="920" height="490" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="sg" value="🛡️  &lt;b&gt;Security Group Inbound&lt;/b&gt;&lt;br&gt;&lt;br&gt;✅ 22 SSH&lt;br&gt;✅ 80 HTTP&lt;br&gt;✅ 3000 Frontend&lt;br&gt;✅ 8000 Backend API&lt;br&gt;✅ 5432 PostgreSQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#94a3b8;fontSize=14;shadow=1;align=left;spacingLeft=18;" vertex="1" parent="1">
+          <mxGeometry x="490" y="470" width="260" height="230" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ec2" value="🟧  &lt;b&gt;EC2 Instance&lt;/b&gt;&lt;br&gt;Ubuntu Server&lt;br&gt;&lt;br&gt;🐳 Docker Engine&lt;br&gt;🐙 Docker Compose" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#f97316;fontSize=16;shadow=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="820" y="410" width="430" height="190" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="appstack" value="&lt;b&gt;Application Stack&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 6;fillColor=#ffffff;strokeColor=#2563eb;fontSize=16;fontStyle=1;fontColor=#1d4ed8;align=center;verticalAlign=top;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="690" y="640" width="680" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="frontend" value="⚛️  &lt;b&gt;Frontend&lt;/b&gt;&lt;br&gt;React + Vite&lt;br&gt;Nginx&lt;br&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;Port: 3000&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;fontSize=15;shadow=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="720" y="700" width="170" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="backend" value="⚡  &lt;b&gt;Backend&lt;/b&gt;&lt;br&gt;FastAPI + Uvicorn&lt;br&gt;Swagger UI: /docs&lt;br&gt;&lt;font color=&quot;#ea580c&quot;&gt;&lt;b&gt;Port: 8000&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#f97316;fontSize=15;shadow=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="940" y="700" width="190" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="postgres" value="🐘  &lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;Database: app&lt;br&gt;User: app&lt;br&gt;&lt;font color=&quot;#6d28d9&quot;&gt;&lt;b&gt;Port: 5432&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5ff;strokeColor=#7c3aed;fontSize=15;shadow=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="700" width="170" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="external" value="🌐  &lt;b&gt;External Access&lt;/b&gt;&lt;br&gt;&lt;br&gt;✅ Frontend&lt;br&gt;Port 3000&lt;br&gt;&lt;br&gt;✅ Backend API&lt;br&gt;Port 8000&lt;br&gt;&lt;br&gt;✅ API Docs&lt;br&gt;/docs&lt;br&gt;&lt;br&gt;✅ Healthchecks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;fontSize=15;shadow=1;align=left;spacingLeft=18;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="390" width="250" height="300" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="storage" value="🛢️  &lt;b&gt;Persistent Storage&lt;/b&gt;&lt;br&gt;&lt;br&gt;PostgreSQL Data&lt;br&gt;Docker Volume&lt;br&gt;postgres_data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5ff;strokeColor=#7c3aed;fontSize=15;shadow=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="760" width="250" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stack" value="&lt;b&gt;Technology Stack&lt;/b&gt;&lt;br&gt;🐳 Docker   |   🐙 Docker Compose   |   ⚛️ React + Vite   |   ⚡ FastAPI   |   🟢 Nginx   |   🐘 PostgreSQL   |   🟣 Terraform   |   🔵 Ansible   |   🟧 AWS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontSize=16;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="995" width="1110" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;&lt;br&gt;━━ Request / Data Flow&lt;br&gt;┄┄ HTTP Communication&lt;br&gt;┄┄ Persistent Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontSize=14;shadow=1;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="960" width="260" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="note" value="ℹ️ Infrastructure is provisioned with Terraform, configured with Ansible, and the application is deployed using Docker Compose on an isolated AWS EC2 instance." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#60a5fa;fontSize=15;fontColor=#0f172a;align=center;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1080" width="1240" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="developer" target="github" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0f172a;strokeWidth=2;endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" edge="1" parent="1" source="github" target="terraform" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0f172a;strokeWidth=2;endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" edge="1" parent="1" source="terraform" target="ansible" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0f172a;strokeWidth=2;endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4" value="Provision AWS Resources" edge="1" parent="1" source="terraform" target="aws" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#7c3aed;strokeWidth=2;endArrow=block;fontSize=13;fontStyle=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" value="Configure Host" edge="1" parent="1" source="ansible" target="ec2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563eb;strokeWidth=2;endArrow=block;fontSize=13;fontStyle=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6" edge="1" parent="1" source="sg" target="ec2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0f172a;strokeWidth=2;endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e7" edge="1" parent="1" source="ec2" target="appstack" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0f172a;strokeWidth=2;endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e8" value="API Calls" edge="1" parent="1" source="frontend" target="backend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0284c7;strokeWidth=2;endArrow=block;fontSize=13;fontStyle=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e9" value="SQL Connection" edge="1" parent="1" source="backend" target="postgres" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#7c3aed;strokeWidth=2;endArrow=block;fontSize=13;fontStyle=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e10" value="Persistent Data" edge="1" parent="1" source="postgres" target="storage" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#7c3aed;strokeWidth=2;endArrow=block;fontSize=13;fontStyle=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e11" edge="1" parent="1" source="browser" target="frontend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0f172a;strokeWidth=2;endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e12" edge="1" parent="1" source="browser" target="backend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0f172a;strokeWidth=2;endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e13" edge="1" parent="1" source="external" target="frontend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#2563eb;strokeWidth=2;endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e14" edge="1" parent="1" source="external" target="backend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#2563eb;strokeWidth=2;endArrow=block;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
