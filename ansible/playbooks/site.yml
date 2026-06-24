@@ -1,0 +1,9 @@
+---
+- name: Configure Docker host
+  ansible.builtin.import_playbook: install-docker.yml
+
+- name: Deploy application stack
+  ansible.builtin.import_playbook: deploy-app.yml
+
+- name: Deploy monitoring stack
+  ansible.builtin.import_playbook: deploy-monitoring.yml
