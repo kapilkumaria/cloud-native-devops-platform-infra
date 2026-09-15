@@ -25,3 +25,8 @@ variable "ssh_allowed_cidr" {
   description = "Your public IP CIDR for SSH access"
   type        = string
 }
+
+variable "ssh_private_key_path" {
+  description = "Local path to the private SSH key used by Ansible"
+  type        = string
+}
