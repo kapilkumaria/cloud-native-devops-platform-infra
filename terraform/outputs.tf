@@ -14,6 +14,5 @@ output "backend_docs_url" {
 }
 
 output "ssh_command" {
-  description = "SSH command"
-  value       = "ssh -i ~/.ssh/YOUR_KEY.pem ubuntu@${aws_instance.app.public_ip}"
+  value = "ssh -i ${var.ssh_private_key_path} ubuntu@${aws_instance.app.public_ip}"
 }

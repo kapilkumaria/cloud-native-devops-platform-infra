@@ -1,5 +1,4 @@
-
-# Terraform local files
+# Terraform local/environment-specific variable files
 **/.terraform/
 *.tfstate
 *.tfstate.*
