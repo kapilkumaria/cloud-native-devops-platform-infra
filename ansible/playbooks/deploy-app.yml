@@ -35,6 +35,20 @@
         group: ubuntu
         mode: "0755"
 
+    # The current deployment uses an unauthenticated HTTPS clone.
+    # Verify repository accessibility before invoking ansible.builtin.git so
+    # a private/inaccessible repository fails quickly instead of waiting for
+    # interactive GitHub credentials.
+    - name: Verify application repository is anonymously accessible
+      ansible.builtin.command:
+        cmd: git ls-remote "{{ app_repo_url }}" HEAD
+      become_user: ubuntu
+      environment:
+        GIT_TERMINAL_PROMPT: "0"
+      register: app_repo_access
+      changed_when: false
+      timeout: 20
+
     - name: Clone or update application repository
       ansible.builtin.git:
         repo: "{{ app_repo_url }}"
@@ -42,6 +56,8 @@
         version: main
         force: true
       become_user: ubuntu
+      environment:
+        GIT_TERMINAL_PROMPT: "0"
 
     - name: Render backend environment file
       ansible.builtin.template:
