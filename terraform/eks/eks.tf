@@ -25,6 +25,7 @@ resource "aws_eks_node_group" "main" {
   subnet_ids      = aws_subnet.public_subnets[*].id
 
   instance_types = [var.node_instance_type]
+  ami_type       = "AL2023_x86_64_STANDARD"
   capacity_type  = "ON_DEMAND"
 
   scaling_config {
