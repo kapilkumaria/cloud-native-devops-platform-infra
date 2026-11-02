@@ -187,3 +187,66 @@ https://github.com/kapilkumaria/cloud-native-devops-platform-app
 # License
 
 MIT License
+
+---
+
+## Secure Deployment Prerequisites
+
+This project uses Terraform and Ansible to deploy a cloud-native application on AWS.
+
+### Required Environment Variables
+
+The Ansible deployment requires two application credentials:
+
+- `POSTGRES_PASSWORD`
+- `FIRST_SUPERUSER_PASSWORD`
+- `FIRST_SUPERUSER_EMAIL` (optional; defaults to `admin@example.com`)
+
+These credentials must be supplied securely to the environment running Ansible.
+
+For the Terraform-driven deployment, supply them to the shell or CI/CD execution environment before invoking Terraform.
+
+Do not commit passwords, AWS credentials, SSH private keys, or Terraform state files to Git.
+
+For production environments, use a centralized secrets management solution such as AWS Secrets Manager.
+
+### SSH Host-Key Verification
+
+SSH host-key verification is enabled.
+
+Before Ansible connects to a newly provisioned EC2 instance:
+
+1. Obtain the instance's SSH host public key through a trusted, authenticated channel.
+2. Independently verify the host key belongs to the intended instance.
+3. Add the verified key to the SSH client's protected `known_hosts` file.
+4. Run Ansible with strict host-key verification enabled.
+
+Do not automatically trust unverified host keys.
+
+### Terraform and Ansible Integration
+
+Terraform invokes the Ansible deployment through a `local-exec` provisioner.
+
+The execution environment must provide the required application credentials.
+
+The current automated deployment workflow also requires a trusted SSH host key to be established before the first Ansible connection.
+
+Until host-key enrollment is integrated into the provisioning workflow, a newly created instance may require a separate trust-establishment step.
+
+### Terraform State Security
+
+Terraform state files can contain sensitive infrastructure information.
+
+Local state files and backups are excluded from Git through `.gitignore`.
+
+For production deployments, use a secured remote Terraform backend with encryption and appropriate access controls.
+
+### Security Validation
+
+Before publication or deployment, perform:
+
+- Gitleaks scanning of Git history and current files.
+- Ansible syntax validation.
+- Terraform formatting and configuration validation.
+- Manual review of infrastructure configuration and documentation.
+- Verification that no real credentials are committed.

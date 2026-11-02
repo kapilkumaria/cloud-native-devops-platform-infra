@@ -12,15 +12,24 @@
 
     postgres_db: "app"
     postgres_user: "app"
-    postgres_password: "changethis123"
+    postgres_password: "{{ lookup('ansible.builtin.env', 'POSTGRES_PASSWORD', default=undef()) }}"
 
     backend_cors_origins: "http://{{ ansible_host }}:3000,http://localhost:3000"
-    first_superuser: "chanllenge@devopsdojo.com"
-    first_superuser_password: "devopsdojo57"
+    first_superuser: "{{ lookup('ansible.builtin.env', 'FIRST_SUPERUSER_EMAIL', default='admin@example.com') }}"
+    first_superuser_password: "{{ lookup('ansible.builtin.env', 'FIRST_SUPERUSER_PASSWORD', default=undef()) }}"
 
     project_name: "Full Stack FastAPI Project"
 
   tasks:
+    - name: Validate required application credentials
+      ansible.builtin.assert:
+        that:
+          - postgres_password | length > 0
+          - first_superuser_password | length > 0
+        fail_msg: "Required application credentials must be supplied through environment variables."
+        quiet: true
+      no_log: true
+
     - name: Install git
       ansible.builtin.apt:
         name: git
@@ -66,6 +75,7 @@
         owner: ubuntu
         group: ubuntu
         mode: "0600"
+      no_log: true
 
     - name: Render frontend environment file
       ansible.builtin.template:

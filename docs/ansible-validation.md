@@ -111,15 +111,18 @@ http://34.207.231.75:8000/docs
 
 ### Login Credentials
 
-```text
-Email:
-challenge@devopsdojo.com
+Application administrator credentials are supplied securely at deployment time.
 
-Password:
-devopsdojo57
-```
+**Required environment variables:**
 
----
+- `POSTGRES_PASSWORD`
+- `FIRST_SUPERUSER_PASSWORD`
+
+Passwords must be supplied through the Ansible execution environment.
+
+For production deployments, use AWS Secrets Manager or another centralized secrets management solution.
+
+Never commit actual passwords, API keys, or other sensitive credentials to Git.
 
 ## Result
 
